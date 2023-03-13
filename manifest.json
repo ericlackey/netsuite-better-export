@@ -17,7 +17,7 @@
     "web_accessible_resources": [{
         "resources": [
             "lib/xlsx.full.min.js",
-            "scripts/ns_modern_excel.js",
+            "scripts/ns_better_export.js",
             "data-export-icon-0.png",
             "Loading_icon.gif"
         ],

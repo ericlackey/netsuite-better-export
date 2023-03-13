@@ -1,8 +1,4 @@
-// Create div to show export options
-const divBE = document.createElement('div');
-divBE.classList.add('better_export');
-divBE.setAttribute('onmouseleave','complete();');
-document.body.appendChild(divBE);
+let divBE = undefined;
 
 // Define available export formats
 const exportFormats = {
@@ -50,15 +46,23 @@ const observer = new MutationObserver(function(mutations_list) {
                     myDiv.setAttribute('onclick','displayOptions(this);');
                     myTD.append(myDiv);
                     childZero.parentNode.before(myTD);
+                    loadContainer();
                 }
             } catch (err) {
                 console.log(err);
-                console.log(childZero);
             }
         });
     });
 });
 observer.observe(document.querySelector("[id=div__footer]"), { subtree: true, childList: true });
+
+// Creates a container for options dropdown and status
+function loadContainer() {
+    divBE = document.createElement('div');
+    divBE.classList.add('better_export');
+    divBE.setAttribute('onmouseleave','complete();');
+    document.body.appendChild(divBE);
+}
 
 // Build the list of options
 function displayOptions(button) {
