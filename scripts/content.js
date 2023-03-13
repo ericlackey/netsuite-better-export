@@ -12,7 +12,7 @@ s.onload = function() {
 (document.head || document.documentElement).appendChild(s);
 
 var s = document.createElement('script');
-s.src = chrome.runtime.getURL('scripts/ns_modern_excel.js');
+s.src = chrome.runtime.getURL('scripts/ns_better_export.js');
 s.onload = function() {
     this.remove();
 };

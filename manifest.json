@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "NetSuite Better Export",
-    "version": "0.2",
+    "version": "0.3",
     "description": "Allows user to export Saved Search results in various formats including the latest version of Excel.",
     "content_scripts": [
         {
