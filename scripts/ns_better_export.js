@@ -74,6 +74,7 @@ function displayOptions(button) {
     // If user clicks icon again and menu is already visible, then hide it
     if (divBE.style.visibility=='visible') {
         divBE.style.visibility='hidden';
+        divBE.style.display='block';
         return;
     }
 
@@ -98,6 +99,7 @@ function displayOptions(button) {
 
     // Make the options list visible
     divBE.style.visibility='visible';
+    divBE.style.display='block';
 
     return;
 }

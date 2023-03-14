@@ -8,6 +8,7 @@
     padding: 5px;
     z-index: 25000;
     visibility: hidden;
+    display: none;
 }
 
 .better_export_option {
