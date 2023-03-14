@@ -54,7 +54,11 @@ const observer = new MutationObserver(function(mutations_list) {
         });
     });
 });
-observer.observe(document.querySelector("[id=div__footer]"), { subtree: true, childList: true });
+
+const footer = document.querySelector("[id=div__footer]");
+if (footer) {
+    observer.observe(document.querySelector("[id=div__footer]"), { subtree: true, childList: true });
+}
 
 // Creates a container for options dropdown and status
 function loadContainer() {
