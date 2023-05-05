@@ -64,7 +64,6 @@ if (footer) {
 function loadContainer() {
     divBE = document.createElement('div');
     divBE.classList.add('better_export');
-    divBE.setAttribute('onmouseleave','complete();');
     document.body.appendChild(divBE);
 }
 
@@ -101,11 +100,14 @@ function displayOptions(button) {
     divBE.style.visibility='visible';
     divBE.style.display='block';
 
+    divBE.setAttribute('onmouseleave','complete();');
+
     return;
 }
 
 // Indicate the the search results are loading
 function loading(message) {
+    divBE.removeAttribute('onmouseleave');
     divBE.innerHTML = '';
     let imgLoading = document.createElement('img');
     imgLoading.src = document.getElementById('me-loading-icon').src;
@@ -128,8 +130,6 @@ function complete() {
 }
 
 function exportSearchResults(format, ext) {
-    
-    console.log(window.location.pathname);
 
     const excelUrl = appendFormDataToURL(`${window.location.pathname}?searchType=Customer`).replace("OfficeXML=F","OfficeXML=T").replace("csv=HTML","csv=Export");
 
@@ -137,9 +137,6 @@ function exportSearchResults(format, ext) {
     
     fileName = fileName.split(/(\:|\-)/)[0].replace(/\s+/g,'');
 
-    console.log(fileName);
-
- 
     (async() => {
     
         try {
@@ -158,7 +155,7 @@ function exportSearchResults(format, ext) {
                 cellStyles: true,
                 cellNF: true
             });
-            const wopts = { bookType:format, bookSST:false, type:'binaryx' };
+            const wopts = { bookType:format, bookSST:false, type:'binary' };
             XLSX.writeFile(workbook, `${fileName}.${ext}`, wopts);
             complete();
         } catch(error) {
