@@ -131,7 +131,9 @@ function complete() {
 
 function exportSearchResults(format, ext) {
 
-    const excelUrl = appendFormDataToURL(`${window.location.pathname}?searchType=Customer`).replace("OfficeXML=F","OfficeXML=T").replace("csv=HTML","csv=Export");
+    const formAction = document.getElementById('footer_actions_form').getAttribute('action');
+
+    const excelUrl = appendFormDataToURL(formAction).replace("OfficeXML=F","OfficeXML=T").replace("csv=HTML","csv=Export");
 
     let fileName = document.title;
     

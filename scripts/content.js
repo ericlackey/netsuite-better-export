@@ -19,13 +19,13 @@ s.onload = function() {
 (document.head || document.documentElement).appendChild(s);
 
 const img = document.createElement('img');
-img.src = chrome.runtime.getURL('data-export-icon-0.png');
+img.src = chrome.runtime.getURL('images/data-export-icon-0.png');
 img.id = "me-icon";
 img.setAttribute('hidden','');
 document.body.append(img);
 
 const imgLoading = document.createElement('img');
-imgLoading.src = chrome.runtime.getURL('Loading_icon.gif');
+imgLoading.src = chrome.runtime.getURL('images/Loading_icon.gif');
 imgLoading.id = "me-loading-icon";
 imgLoading.setAttribute('hidden','');
 document.body.append(imgLoading);
