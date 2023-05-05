@@ -18,8 +18,8 @@
       "resources": [
           "lib/xlsx.full.min.js",
           "scripts/ns_better_export.js",
-          "data-export-icon-0.png",
-          "Loading_icon.gif"
+          "images/data-export-icon-0.png",
+          "images/Loading_icon.gif"
       ],
       "matches": ["<all_urls>"]
   }]
