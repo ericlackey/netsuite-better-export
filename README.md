@@ -8,6 +8,9 @@ A NetSuite Chrome extension that allows users to export Saved Search results in 
 
 ## Release Notes
 
+### 0.7
+- Fix bug introduced in 2024.2 causing extension not to display.
+
 ### 0.6
 - Works properly even when Saved Search is not saved yet.
 - Status spinner no longer disappears until file is finished downloading.

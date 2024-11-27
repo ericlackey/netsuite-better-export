@@ -19,7 +19,7 @@ s.onload = function() {
 (document.head || document.documentElement).appendChild(s);
 
 const img = document.createElement('img');
-img.src = chrome.runtime.getURL('images/data-export-icon-0.png');
+img.src = chrome.runtime.getURL('images/BE.svg');
 img.id = "me-icon";
 img.setAttribute('hidden','');
 document.body.append(img);

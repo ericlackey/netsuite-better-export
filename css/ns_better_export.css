@@ -1,7 +1,7 @@
 .better_export {
     position: absolute;
     width:200px;
-    height:140px;
+    height:220px;
     opacity: 0.9;
     background-color: #FFFFFF;
     border: thin solid #000000;
@@ -11,19 +11,14 @@
     display: none;
 }
 
+
+
 .better_export_option {
     padding: 2px;
 }
 
 .better_export_option:hover {
     background-color: #CCCCCC;
-}
-
-.better_export_icon {
-    height:18px;
-    width:18px;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .better_export_loading_image {
