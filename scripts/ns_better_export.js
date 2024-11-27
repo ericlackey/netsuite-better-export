@@ -28,36 +28,22 @@ const exportFormats = {
     },
 }
 
-// Find the proper place in the DOM to inject the Better Export icon
-const observer = new MutationObserver(function(mutations_list) {
-    mutations_list.forEach(function(mutation) {
-        mutation.addedNodes.forEach(function(added_node) {
-            if (!added_node.children || added_node.children.length==0) {
-                return;
-            }
-            const childZero = added_node.children[0];
-            try {
-                if (childZero && childZero.getAttribute('data-button-code') == 'export') {
-                    let myTD = document.createElement('td');
-                    let myDiv = document.createElement('div');
-                    myImgUrl = document.getElementById('me-icon').src;
-                    myDiv.classList.add('better_export_icon');
-                    myDiv.style=`background-image:url(${myImgUrl});background-repeat: no-repeat;background-size: cover;`;            
-                    myDiv.setAttribute('onclick','displayOptions(this);');
-                    myTD.append(myDiv);
-                    childZero.parentNode.before(myTD);
-                    loadContainer();
-                }
-            } catch (err) {
-                console.log(err);
-            }
-        });
-    });
-});
+const exportButton = document.querySelector("[data-button-code=export]");
 
-const footer = document.querySelector("[id=div__footer]");
-if (footer) {
-    observer.observe(document.querySelector("[id=div__footer]"), { subtree: true, childList: true });
+if (exportButton) {
+    let myTD = document.createElement('td');
+    let myDiv = document.createElement('div');
+    let myImg = document.createElement('img');
+    myDiv.classList.add('uir-list-icon-button');
+    myDiv.setAttribute('onclick','displayOptions(this);');
+    myDiv.title = "Better Export";
+    myTD.append(myDiv);
+    myImg.src = document.getElementById('me-icon').src;
+    myImg.setAttribute("width","20px");
+    myImg.setAttribute("height","20px");
+    myDiv.append(myImg);
+    exportButton.parentNode.before(myTD);
+    loadContainer();
 }
 
 // Creates a container for options dropdown and status
