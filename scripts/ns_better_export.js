@@ -137,7 +137,7 @@ function exportSearchResults(format, ext) {
             var bstr = arr.join("");
             const workbook = await XLSX.read(bstr, {
                 type: "binary",
-                cellDates: true,
+                cellDates: false,
                 cellHTML: true,
                 cellText: true,
                 cellStyles: true,

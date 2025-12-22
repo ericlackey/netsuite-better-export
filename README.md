@@ -8,6 +8,9 @@ A NetSuite Chrome extension that allows users to export Saved Search results in 
 
 ## Release Notes
 
+### 0.8
+- Fix bug causing dates to change based on local timezone when exporting to XLSX
+
 ### 0.7
 - Fix bug introduced in 2024.2 causing extension not to display.
 
